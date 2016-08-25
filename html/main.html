@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<script src="../library/jquery-2.1.4.js"></script>
+<script src="../library/jquery.tooltipster.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/toolbar.css"/>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+
+<script src="../library/js/adjusters_factory.js"></script>
+<script src="../library/js/canvas_plate.js"></script>
+<script src="../library/js/drawSVG.js"></script>
+<script src="../library/js/sketch_factory.js"></script>
+<script src="../library/js/toolbox.js"></script>
+<script src="../library/js/sketches/arrow.js"></script>
+<script src="../library/js/sketches/scribble.js"></script>
+<script src="../library/js/sketches/rect.js"></script>
+<script src="../library/js/sketches/circle.js"></script>
+
+<head>
+    <title>Drawings</title>
+
+</head>
+<body>
+<!----------- Container for Drawings START -------------->
+<div class="drawing_plate_container">
+    <div class="drawing_plate"></div>
+</div>
+
+<!----------- Container for Drawings END ---------------->
+
+<!------------- Toolbar for Drawings START -------------->
+<div class="tools_outer viewer_toolbar">
+    <div class="tools_inner">
+        <div class="tools_block tools_block_navigation">
+            <ul id="full_view_toolbar" class="tools_list">
+                <li>
+                    <a href="javascript:void(0);" id="line" class="line drawing tool_item" title="Draw arrow"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" id="scribble" class="scribble drawing tool_item"
+                       title="Draw scribble"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" id="rect" class="rect drawing tool_item"
+                       title="Draw Rectangle"></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" id="circle" class="circle drawing tool_item"
+                       title="Draw circle"></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!------------- Toolbar for Drawings END -------------->
+
+<script type="text/javascript">
+    var toolbox = $('div.tools_outer.viewer_toolbar');
+    toolbox = new Toolbox({
+        drawing_container: $('div.drawing_plate'),
+        container: toolbox,
+        tools: toolbox.find('a.tool_item'),
+        annotation_tools: toolbox.find('a.annotation'),
+        drawing_tools: toolbox.find('a.drawing')
+    });
+</script>
+
+<script>
+    var data = {
+        existing_drawings: {Rect: {}, Circle: {}, Arrow: {}, Scribble: {}},
+        sheets_data: {},
+        stroke_color: '#000000',
+        endpoints: {create_drawing: {url: '', method: 'POST'}},
+        plate: $('div.drawing_plate'),
+        plateContainer: $('div.drawing_plate_container'),
+        container: $('<div class="svg_container" id="svg_container"></div>').height('100%').width('100%'),
+        toolbox: toolbox,
+        svg: $('' +
+                '<svg id="svgroot" class="main_svg" xmlns:svg="http://www.w3.org/2000/svg" ' +
+                'xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 1000">' +
+                '<defs id="definitions" class="line_arrow">' +
+                '<marker id="arrow_head" orient="auto" markerwidth="6" markerheight="6" refx="1" refy="5" ' +
+                'viewBox="0 0 20 20">' +
+                '<path d="M 0 0 L 10 5 L 0 10 z" fill="' + '<%= Drawing::STROKE_COLOR %>' +
+                '" id="arrow_head_path-" ' +
+                'vector-effect= "non-scaling-stroke"/>' +
+                '</marker>' +
+                '</defs>' +
+                '</svg>'
+        ),
+        rect: {
+            draggable: true, resizable: true, rotatable: false, linkable: true, textable: false, deletable: true
+        },
+        circle: {
+            draggable: true, resizable: true, rotatable: false, linkable: true, textable: false, deletable: true
+        },
+        scribble: {
+            draggable: false, resizable: false, rotatable: false, linkable: false, textable: true,
+            deletable: true
+        },
+        line: {
+            draggable: false, resizable: false, rotatable: false, linkable: false, textable: true,
+            deletable: true
+        },
+
+        /*--- Different templates used in drawings ---*/
+        sheet_list_template: '',
+        drawing_link_template: '',
+        drawing_text_template: '',
+        drawing_actions_template: '',
+        processing_thumbnail: ''
+    };
+
+    var canvas_plate = new CanvasPlate(data);
+    canvas_plate.adaptIdleModeBehaviour();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<div class="tools_outer viewer_toolbar">
+  <div class="tools_inner">
+    <div class="tools_block tools_block_navigation">
+      <ul id="full_view_toolbar" class="tools_list">
+        <li>
+          <a href="javascript:void(0);" id="line" class="line drawing tool_item" title="Draw arrow"></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" id="scribble" class="scribble drawing tool_item" title="Draw scribble"></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" id="rect" class="rect drawing tool_item" title="Draw Rectangle"></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" id="circle" class="circle drawing tool_item" title="Draw circle"></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $('.viewer_toolbar').insertAfter(viewer.outer_shell).show();
+
+    var toolbox = $('div.tools_outer.viewer_toolbar');
+    toolbox = new Toolbox({
+        viewer: viewer,
+        container: toolbox,
+        tools: toolbox.find('a.tool_item'),
+        annotation_tools: toolbox.find('a.annotation'),
+        drawing_tools: toolbox.find('a.drawing')
+    });
+</script>
