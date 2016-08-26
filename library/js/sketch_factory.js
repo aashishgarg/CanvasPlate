@@ -452,13 +452,14 @@ SketchFactory.prototype = {
 
     //==================  Save newly created drawing  ================//
     saveDrawing: function (options) {
-        $.ajax({
-            method: this.options.plate.options.endpoints.create_drawing.method,
-            url: this.options.plate.options.endpoints.create_drawing.url,
-            data: JSON.stringify(options.data),
-            contentType: "application/json",
-            dataType: 'script'
-        })
+        console.log(options.data);
+        //$.ajax({
+        //    method: this.options.plate.options.endpoints.create_drawing.method,
+        //    url: this.options.plate.options.endpoints.create_drawing.url,
+        //    data: JSON.stringify(options.data),
+        //    contentType: "application/json",
+        //    dataType: 'script'
+        //})
     },
     //==================  update created drawing  ================//
     updateDrawing: function (options) {

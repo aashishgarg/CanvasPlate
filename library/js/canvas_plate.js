@@ -14,16 +14,8 @@ CanvasPlate.LONG_PRESS_TIME = 700;  //MILLISECONDS
 //==============  Canvas Plate acting as space to play with drawings ==================================//
 function CanvasPlate(options) {
     this.options = {
-        id: null,
-        toolbox: null,
-        plate: null,
-        container: null,
-        svg: null,
-
-        rect: null,
-        circle: null,
-        scribble: null,
-        line: null
+        id: null, toolbox: null, plate: null, container: null, svg: null, rect: null, circle: null,
+        scribble: null, line: null
     };
     $.extend(this.options, options);
 
@@ -47,20 +39,6 @@ function CanvasPlate(options) {
     this.drawing_type_selected = '';
     this.options.plateSetData = {height: this.options.plate.height(), width: this.options.plate.width()};
     var _this = this;
-
-    /*
-     Zooming on viewer takes time and provide final dimensions.On Canvas
-     Plate for setting viewBox, viewer's final dimensions are required.
-     */
-    //if (this.options.viewer) {
-    //    this.options.onMouseScrollInstructions = null;
-    //    this.options.viewer.registerAfterZoomCallback(function (pos_n_dim, tiles_loaded_flag) {
-    //        _this.options.plateSetData = pos_n_dim;
-    //        if (typeof(_this.options.onMouseScrollInstructions) == "function") {
-    //            _this.options.onMouseScrollInstructions();
-    //        }
-    //    });
-    //}
 
     //=============================  For plate provisioning  =============================================//
     this.provision();
@@ -88,43 +66,6 @@ function CanvasPlate(options) {
             );
         } else {
             _this.adaptIdleModeBehaviour()
-        }
-    });
-
-    $('body').on('keyup', function (e) {
-        if (e.which == 27) {
-            _this.adaptIdleModeBehaviour();
-        }
-    });
-
-    //=============================  Overlapped drawing selection  =========================================//
-    this.overlapping_drawings_container.on('click', '.sample_svg', function (e) {
-        e.stopPropagation();
-        var sample_svg = this;
-        $.each(_this.allDrawings(), function (i, obj) {
-            if (obj.options.id == $(sample_svg).children().first().attr('id')) {
-                obj.adjusters.boundary_group.show(CanvasPlate.SKETCHES_SHOW_ANIMATION_TIME);
-                obj.sketch.toggleBoundary('show');
-                obj.adjusters.local_svg.data('z_index', parseInt(Date.now()));
-                _this.reArrangeElements($('.local_svg'));
-                _this.current_drawing = obj;
-            } else {
-                obj.adjusters.boundary_group.hide(CanvasPlate.SKETCHES_HIDE_ANIMATION_TIME)
-            }
-            obj.adjusters.actions_circle_a.tooltipster('hide');
-        });
-        _this.options.plate.removeClass('overlapping_underlay');
-        _this.current_drawing.adjusters.actions_circle_a.tooltipster('show');
-    });
-
-    this.overlapping_drawings_container.on('mousewheel', function (e) {
-        e.stopPropagation();
-    });
-    //=============================  Provision new SVG on zooming =========================================//
-    this.options.svg.on('mousewheel', function (e) {
-        _this.options.onMouseScrollInstructions = function () {
-            _this.updateViewBox();
-            _this.adjustBoundaryElements();
         }
     });
 
