@@ -1,0 +1,283 @@
+.link_template_main_container .header {
+    cursor: default;
+    margin: 0 0 0 1px;
+}
+.link_template_main_container .header .template_sheet_no {
+    font-size: 12px;
+}
+.link_template_main_container .header .template_sheet_name {
+    font-size: 12px;
+}
+.link_template_main_container .header .drawings_sheets_list {
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 0;
+    line-height: normal;
+    padding-bottom: 4px;
+}
+.link_template_main_container .header .push_to_master_drawing {
+    font-size: 22px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+.link_template_main_container .content {
+    float: left;
+    width: 100%;
+}
+.link_template_main_container .content .sheet_list {
+    width: 300px;
+    overflow: auto;
+}
+.link_template_main_container .content .list_item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3px 0;
+}
+.link_template_main_container .content .drawing_sheet_link {
+    margin: 0 auto 2px;
+    border-radius: 3px;
+    display: block;
+}
+.link_template_main_container .content .list_item {
+    cursor: pointer;
+}
+.link_template_main_container .footer .sheet_link_edit {
+    background: #ffffff;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #000000;
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 2px 4px;
+    text-align: center;
+    width: 100%;
+    margin-left: -2px;
+}
+.link_template_main_container .footer .ptm_icon {
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.drawing_text_form .content .template_textarea {
+    border: medium none;
+    border-radius: 3px;
+    color: #000000;
+    font-size: 12px;
+    height: 53px;
+    margin-bottom: 2px;
+    padding: 3px 36px 3px 3px;
+    resize: none;
+    overflow: hidden;
+}
+.drawing_text_form .content .submit_text_container {
+    float: left;
+    margin: 2px 0 0;
+    width: 100%;
+}
+.drawing_text_form .content .submit_text_container .submit_text {
+    background: #ffffff none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #000000;
+    float: left;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 0;
+    opacity: 1;
+    padding: 2px 10px;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.drawing_text_form .content .submit_text_container .submit_text:hover {
+    opacity: 1;
+}
+.drawing_text_form .footer {
+    margin: 2px;
+}
+.drawing_text_form .footer .ptm_icon {
+    cursor: pointer;
+    float: right;
+    font-size: 22px;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+.overlapping_drawings_container {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100px !important;
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    overflow: auto;
+}
+.overlapping_drawings_container .sample_svg {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+}
+.overlapping_drawings_container .sample_svg:hover {
+    background-color: black;
+}
+.overlapping_drawings_container .drawing_clone {
+    stroke-width: 1px;
+    fill: trasparent;
+}
+
+.overlapping_underlay {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.svg_container .main_scribble {
+    stroke-width: 2;
+    fill: transparent;
+}
+.svg_container .main_circle {
+    fill: transparent;
+    stroke-width: 2;
+}
+.svg_container .main_rect {
+    stroke-width: 2;
+    fill: transparent;
+}
+.svg_container .line {
+    stroke-width: 2;
+}
+.svg_container .boundary {
+    stroke: #000;
+    stroke-width: 1;
+    fill: transparent;
+    stroke-dasharray: 5;
+}
+.svg_container .boundary_circle {
+    stroke: #000;
+    stroke-width: 1;
+    fill: "#fff";
+}
+.svg_container .top_circle {
+    cursor: ns-resize;
+}
+.svg_container .right_circle {
+    cursor: ew-resize;
+}
+.svg_container .bottom_circle {
+    cursor: ns-resize;
+}
+.svg_container .left_circle {
+    cursor: ew-resize;
+}
+.svg_container .boundary_path {
+    fill: transparent;
+    stroke: #000;
+    stroke-width: 1;
+    stroke-dasharray: 5;
+}
+.svg_container .boundary_transform_bar {
+    stroke: #000;
+    stroke-width: 3;
+}
+.svg_container .boundary_transform_circle {
+    stroke: #000;
+    stroke-width: 2;
+    cursor: nwse-resize;
+}
+.svg_container .input {
+    background-color: white;
+}
+.svg_container .sample_svg {
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+.svg_container .delete_drawing {
+    cursor: pointer;
+}
+
+.center_text {
+    width: 100px;
+}
+
+.de-fade {
+    stroke: white;
+    stroke-opacity: 0.2;
+}
+
+.sheets_list_thumbnail {
+    height: 50px;
+    width: 50px;
+    margin: 2px 3px 2px 1px;
+    border-radius: 3px;
+}
+
+.sheets_list_text {
+    font-size: 12px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.slimScrollDiv {
+    margin-bottom: 5px;
+}
+
+.sheet_description {
+    float: left;
+    width: 100%;
+}
+.sheet_description .jump_to_sheet_text {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.sheet_link_footer {
+    float: left;
+    margin: 2px 0 0 2px;
+    width: 100%;
+}
+
+.link_template_main_container .title_block {
+    border-bottom: 1px solid #555555;
+    display: table;
+    margin-bottom: 5px;
+    padding: 0 0 3px;
+    width: 100%;
+    height: 25px;
+}
+
+.text_content {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    cursor: initial;
+}
+
+.ptm_icon.fa.fa-child {
+    cursor: pointer;
+}
+
+.ptm_icon.fa.fa-graduation-cap {
+    cursor: not-allowed;
+}
+
+/*-------------------------------------------------------------------*/
+.drawing_action_toolbox .container {
+    width: 20px;
+    padding: 3px;
+}
+.drawing_action_toolbox .container .drawing_action_item {
+    cursor: pointer;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+    width: 15px;
+}
+.drawing_action_toolbox .container .drawing_action_item .drawing_action_link {
+    color: #ffffff;
+}
+
+.link_template_main_container .drawing_sheets_header {
+    max-width: 175px;
+}

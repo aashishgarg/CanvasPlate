@@ -479,8 +479,8 @@ SketchFactory.prototype = {
 
     disableActionTool: function (element) {
         $(element).attr('href', 'javascript:void(0);').css({'pointer-events': 'none'});
-        $(element).parent('span').attr('title', element.data().type.capitalize() + ' not available.')
-            .css({'cursor': 'not-allowed'});
+        //$(element).parent('span').attr('title', element.data().type.capitalize() + ' not available.')
+        //    .css({'cursor': 'not-allowed'});
         $(element).find('i').css({'color': '#595959'})
     },
 
