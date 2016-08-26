@@ -1,5 +1,5 @@
-## Learning
-#### *Learning to create an independent JS plugin(CanvasPlate) for creating drawings on a HTML div element.*
+# Learning
+### *Learning to create an independent JS plugin(CanvasPlate) for creating drawings on a HTML div element.*
 ##### CanvasPlate
 
  Provisions a plate(canvas_plate) where drawings can be drawn.
